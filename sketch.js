@@ -3,7 +3,7 @@ const World= Matter.World;
 const Bodies = Matter.Bodies;
 
 var engine, world;
-var ground, ball;
+var ground, ball,ball2;
 
 function setup(){
     var canvas = createCanvas(400,400);
@@ -24,6 +24,9 @@ function setup(){
     ball = Bodies.circle(200,100,20, ball_options);
     World.add(world,ball);
 
+    ball2 = Bodies.circle(300,200,30, ball_options);
+    World.add(world,ball2);
+
     console.log(ground);
 }
 
@@ -35,4 +38,7 @@ function draw(){
 
     ellipseMode(RADIUS);
     ellipse(ball.position.x, ball.position.y, 20, 20);
+
+    ellipse(ball2.position.x, ball2.position.y, 20, 20);
+
 }
